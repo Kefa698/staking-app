@@ -10,11 +10,11 @@ const SECONDS_IN_A_YEAR = 31449600
 !developmentChains.includes(network.name)
     ? describe.skip
     : describe("Staking Unit Tests", function () {
-          let staking, rewardToken, deployer, dai, stakeAmount
+          let staking, rewardToken, deployer, stakeAmount
           beforeEach(async () => {
               const accounts = await ethers.getSigners()
               deployer = accounts[0]
-              await deployments.fixture(["mocks", "rewardtoken", "staking"])
+              await deployments.fixture(["mocks", "RewardToken", "Staking"])
               staking = await ethers.getContract("Staking")
               rewardToken = await ethers.getContract("RewardToken")
               stakeAmount = ethers.utils.parseEther("100000")
