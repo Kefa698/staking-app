@@ -14,7 +14,7 @@ const SECONDS_IN_A_YEAR = 31449600
           beforeEach(async () => {
               const accounts = await ethers.getSigners()
               deployer = accounts[0]
-              await deployments.fixture(["mocks", "RewardToken", "Staking"])
+              await deployments.fixture(["RewardToken", "Staking"])
               staking = await ethers.getContract("Staking")
               rewardToken = await ethers.getContract("RewardToken")
               stakeAmount = ethers.utils.parseEther("100000")
