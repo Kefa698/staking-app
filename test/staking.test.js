@@ -1,8 +1,8 @@
 const { assert, expect } = require("chai")
 const { network, deployments, ethers } = require("hardhat")
-const { developmentChains } = require("../../helper-hardhat-config")
-const { moveBlocks } = require("../../utils/move-blocks")
-const { moveTime } = require("../../utils/move-time")
+const { developmentChains } = require("../helper-hardhat-config")
+const { moveBlocks } = require("../utils/move-blocks")
+const { moveTime } = require("../utils/move-time")
 
 const SECONDS_IN_A_DAY = 86400
 const SECONDS_IN_A_YEAR = 31449600
