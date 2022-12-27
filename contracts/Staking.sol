@@ -59,6 +59,7 @@ contract Staking is ReentrancyGuard {
      * @notice Deposit tokens into this contract
      * @param amount | How much to stake
      */
+    
     function stake(uint256 amount)
         external
         updateReward(msg.sender)
