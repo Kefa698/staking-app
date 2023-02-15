@@ -150,7 +150,7 @@ contract Staking is ReentrancyGuard {
         s_balances[msg.sender] -= amount;
         // Update the total staked balance
         s_totalSupply -= amount;
-        // Transfer the remaining amount to the caller
+        // Transfr the remaining amount to the caller
         bool success = s_stakingToken.transfer(msg.sender, amount);
         require(success, "Transfer failed");
     }
