@@ -22,7 +22,7 @@ const SECONDS_IN_A_YEAR = 31449600
 
           describe("constructor", () => {
               it("sets the rewards token address correctly", async () => {
-                  const response = await staking.s_rewardsToken()
+                  const response = await staking.s_rewardToken()
                   assert.equal(response, rewardToken.address)
               })
           })
@@ -77,7 +77,7 @@ const SECONDS_IN_A_YEAR = 31449600
                   await moveBlocks(1)
                   const earned = await staking.earned(deployer.address)
                   const balanceBefore = await rewardToken.balanceOf(deployer.address)
-                  await staking.claimReward()
+                  await staking.claim()
                   const balanceAfter = await rewardToken.balanceOf(deployer.address)
                   assert(balanceBefore.add(earned).toString()== balanceAfter.toString())
               })
